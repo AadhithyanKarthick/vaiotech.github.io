@@ -1,36 +1,38 @@
-<?php
-include 'db_conn.php';
-
-if (isset($_POST['build'])) {
-  $org_name=$_POST['org_name'];
-  $street=$_POST['street'];
-  $area=$_POST['area'];
-  $city=$_POST['city'];
-  $state=$_POST['state'];
-  $zip=$_POST['zip'];
-  $country=$_POST['country'];
-  $currency=$_POST['currency'];
-  $gst=$_POST['gst'];
-  $logo=$_POST['logo'];
-  $location=$street.','.$area.','.$city.','.$state.','.$zip.','.$country;
-  $client_id=rand(1000,9999).substr(str_replace(' ', '', $org_name), 0, 6);
-
-  $cust_ins="INSERT into clients (client_id,client_name,location,currency,gst,logo) VALUES ('$client_id','$org_name','$location','$currency','$gst','$logo')";
-  $cust_ins_exe=mysqli_query($conn,$cust_ins);
-  if ($cust_ins_exe) {
-    header("location:v1/biller/dashboard.php");
-  }
-}
-?>
 
 
 <!DOCTYPE html>
 <html>
 <head>
 	<title>VA Tech - SaaS Applications for Businesses</title>
-<?php
-require("asset.php");
-?>
+<meta charset="utf-8" />
+  <link rel="icon" type="image/png" href="assets/img/logo1.png">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+
+  <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    <meta name="viewport" content="width=device-width" />
+    
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+    <!-- Bootstrap core CSS     -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Animation library for notifications   -->
+    <link href="assets/css/animate.min.css" rel="stylesheet"/>
+
+
+    <!--  CSS for Demo Purpose, don't include it in your project     -->
+    <!-- <link href="assets/css/demo.css" rel="stylesheet" /> -->
+
+
+    <!--     Fonts and icons     -->
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
+    <link href="assets/css/pe-icon-7-stroke.css" rel="stylesheet" />
+    
+    <link href="assets/css/bootstrap-datetimepicker.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="assets/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/aos.css">
 <style type="text/css">
 .jump{
 	background-color: royalblue;
@@ -151,9 +153,69 @@ canvas {
 </div>
 
 </body>
-<?php 
-require 'js.php';
-?>
+ <!--   Core JS Files   -->
+   <script src="assets/js/jquery.3.2.1.min.js" type="text/javascript"></script>
+ <script src="assets/js/bootstrap.min.js" type="text/javascript"></script> 
+   
+
+<!-- <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script> -->
+<script type="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="assets/js/jquery.validate.min.js" type="text/javascript"></script>
+
+    
+     <script src="assets/js/jquery.table2excel.min.js" type="text/javascript"></script>
+
+    <!--  Charts Plugin -->
+    <!-- <script src="assets/js/chartist.min.js"></script> -->
+    <script src="assets/js/Chart.min.js"></script>
+    <!--  Notifications Plugin    -->
+    <script src="assets/js/bootstrap-notify.js"></script>
+
+    <!-- Light Bootstrap Table Core javascript and methods for Demo purpose -->
+    <script src="assets/js/light-bootstrap-dashboard.js?v=1.4.0"></script>
+<script src="assets/js/moment.js"></script>
+    <!-- Light Bootstrap Table DEMO methods, don't include it in your project! -->
+    <script src="assets/js/bootstrap-datetimepicker.min.js"></script>
+     
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/css/bootstrap-datetimepicker.css"></script>
+
+     <script type="text/javascript" src="assets/js/jquery.dataTables.min.js"></script>
+     <script type="text/javascript" src="assets/js/aos.js"></script>
+
+      <script type="text/javascript" src="assets/js/particles.min.js"></script>
+
+      <!--   Core JS Files   -->
+   <script src="assets/js/jquery.3.2.1.min.js" type="text/javascript"></script>
+ <script src="assets/js/bootstrap.min.js" type="text/javascript"></script> 
+   
+
+<!-- <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script> -->
+<script type="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="assets/js/jquery.validate.min.js" type="text/javascript"></script>
+
+    
+     <script src="assets/js/jquery.table2excel.min.js" type="text/javascript"></script>
+
+    <!--  Charts Plugin -->
+    <!-- <script src="assets/js/chartist.min.js"></script> -->
+    <script src="assets/js/Chart.min.js"></script>
+    <!--  Notifications Plugin    -->
+    <script src="assets/js/bootstrap-notify.js"></script>
+
+    <!-- Light Bootstrap Table Core javascript and methods for Demo purpose -->
+    <script src="assets/js/light-bootstrap-dashboard.js?v=1.4.0"></script>
+<script src="assets/js/moment.js"></script>
+    <!-- Light Bootstrap Table DEMO methods, don't include it in your project! -->
+    <script src="assets/js/bootstrap-datetimepicker.min.js"></script>
+     
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/css/bootstrap-datetimepicker.css"></script>
+
+     <script type="text/javascript" src="assets/js/jquery.dataTables.min.js"></script>
+     <script type="text/javascript" src="assets/js/aos.js"></script>
+
+      <script type="text/javascript" src="assets/js/particles.min.js"></script>
+
+     
 <script type="text/javascript">
  AOS.init();
 
