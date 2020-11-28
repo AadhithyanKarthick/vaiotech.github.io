@@ -2,9 +2,35 @@
 <html>
 <head>
 	<title>VA Tech - SaaS Applications for Businesses</title>
-<?php
-require("asset.php");
-?>
+<meta charset="utf-8" />
+	<link rel="icon" type="image/png" href="assets/img/logo1.png">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+
+	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    <meta name="viewport" content="width=device-width" />
+    
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+    <!-- Bootstrap core CSS     -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Animation library for notifications   -->
+    <link href="assets/css/animate.min.css" rel="stylesheet"/>
+
+
+    <!--  CSS for Demo Purpose, don't include it in your project     -->
+    <!-- <link href="assets/css/demo.css" rel="stylesheet" /> -->
+
+
+    <!--     Fonts and icons     -->
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
+    <link href="assets/css/pe-icon-7-stroke.css" rel="stylesheet" />
+    
+    <link href="assets/css/bootstrap-datetimepicker.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="assets/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/aos.css">
 <style type="text/css">
 #jumbo{
 	height: 110vh;
@@ -25,7 +51,9 @@ require("asset.php");
    border-style: none;
  
 }
-
+.navbar-nav{
+        margin-left: 40vw;
+    }
 #customer{
   	margin-top: 66vh;
   }
@@ -84,12 +112,83 @@ margin-left: 60px;
   }
 }
 
+
+.footer{
+	/*height: 200px;*/
+	background-color: lightblue;
+	margin-top: 21vh;
+}
+.p {
+   width: 100%; 
+   text-align: center; 
+   border-bottom: 1px solid #000; 
+   line-height: 0.1em;
+   margin: 10px 0 20px; 
+} 
+
+.p span { 
+    background:lightblue; 
+    padding:0 10px; 
+}
+.mr-3{
+	width: 45px;
+	height: 45px;
+}
+.space{
+	padding-bottom: 10px;
+}
+
+@media only screen and (max-device-width: 640px) {
+.h3 {
+	font-weight: 100;
+	}
+	.footer{
+	/*height: 200px;*/
+	background-color: lightblue;
+	margin-top: 21vh;
+}
+}
 </style>
 </head>
 <body>
-<?php 
-include 'nav.php';
-?>
+<nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light" style="background-color: #154284;">
+  <a class="navbar-brand" href="index.php">
+    <img src="assets/img/logofull.png" width="120" height="60" class="d-inline-block align-top" alt="" loading="lazy">
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbar">
+    <ul class="navbar-nav" >
+      <li class="nav-item active">
+        <a class="nav-link" href="product.php"><b>Our Products</b><span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="project.php"><b>Projects</b></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="contact.php"><b>Contact Us</b></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#"><b>Blog</b></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="contact.php"><b>24x7 Support </b><i class="fa fa-globe fa-spin" aria-hidden="true"></i></a>
+      </li>
+      <!-- <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dropdown link
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </li> -->
+    </ul>
+  </div>
+</nav>
 <div class="wrapper">
 <div class="jumbotron" style="background-color: white;height: 80vh;">
 	<center>
@@ -289,9 +388,49 @@ include 'nav.php';
 
 </div>
 
-<?php
-require 'footer.php';
-?>
+<div class="footer">
+	<div class="container">
+		<p class="p"><span>Our Products to try for free</span></p><br>
+		<div class="row">
+			<div class="col">
+				<div class="media">
+				  <img src="assets/img/check.png" class="mr-3" alt="Inventory system">
+				  <div class="media-body">
+				    <h5 class="mt-0">Invent</h5>
+				    Inventory Management System
+				  </div>
+				</div>
+			</div>
+
+			<div class="col">
+				<div class="media">
+				  <img src="assets/img/ecart.png" class="mr-3" alt="Estore system">
+				  <div class="media-body">
+				    <h5 class="mt-0">E-Builder</h5>
+				    Build your online E-commerce Store
+				  </div>
+				</div>
+			</div>
+
+			<div class="col">
+				<div class="media">
+				  <img src="assets/img/cms2.png" class="mr-3" alt="CMS system">
+				  <div class="media-body">
+				    <h5 class="mt-0">Blog</h5>
+				    Content Management System
+				  </div>
+				</div>
+			</div>
+		</div>
+		<br>
+		<div class="space">
+			<center>
+			<span>&#169;</span>AV Tech. All rights reserved |
+			Connect with us on <i class="fa fa-facebook-square"></i><span style="margin-left: 6px;"><i class="fa fa-instagram"></i></span><span style="margin-left: 6px;"><i class="fa fa-twitter"></i></span>
+			</center>
+		</div>
+	</div>
+</div>
 </body>
 <?php 
 require 'js.php';
