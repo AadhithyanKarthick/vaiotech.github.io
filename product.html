@@ -175,25 +175,7 @@ canvas {
 <div id="loading"></div>
 
 <script type="text/javascript">
-  function onReady(callback) {
-    var intervalID = window.setInterval(checkReady, 1000);
-
-    function checkReady() {
-        if (document.getElementsByTagName('body')[0] !== undefined) {
-            window.clearInterval(intervalID);
-            callback.call(this);
-        }
-    }
-}
-
-function show(id, value) {
-    document.getElementById(id).style.display = value ? 'block' : 'none';
-}
-
-onReady(function () {
-    show('page', true);
-    show('loading', false);
-});
+  
 </script>
 
 <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light" style="background-color: #154284;">
@@ -514,6 +496,24 @@ particlesJS("particles-js", {
   },
   "retina_detect": true
 });
-	
+	function onReady(callback) {
+    var intervalID = window.setInterval(checkReady, 1000);
+
+    function checkReady() {
+        if (document.getElementsByTagName('body')[0] !== undefined) {
+            window.clearInterval(intervalID);
+            callback.call(this);
+        }
+    }
+}
+
+function show(id, value) {
+    document.getElementById(id).style.display = value ? 'block' : 'none';
+}
+
+onReady(function () {
+    show('page', true);
+    show('loading', false);
+});
 </script>
 </html>
