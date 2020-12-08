@@ -153,6 +153,49 @@ canvas {
 </style>
 </head>
 <body>
+    <style type="text/css">
+  #page {
+    display: none;
+}
+#loading {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(192, 192, 192, 0.5);
+    background-image: url(assets/img/load1.gif);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+</style>
+
+<div id="loading"></div>
+
+<script type="text/javascript">
+  function onReady(callback) {
+    var intervalID = window.setInterval(checkReady, 1000);
+
+    function checkReady() {
+        if (document.getElementsByTagName('body')[0] !== undefined) {
+            window.clearInterval(intervalID);
+            callback.call(this);
+        }
+    }
+}
+
+function show(id, value) {
+    document.getElementById(id).style.display = value ? 'block' : 'none';
+}
+
+onReady(function () {
+    show('page', true);
+    show('loading', false);
+});
+</script>
+
 <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light" style="background-color: #154284;">
   <a class="navbar-brand" href="index.html">
     <img src="assets/img/logofull.png" width="120" height="60" class="d-inline-block align-top" alt="" loading="lazy">
@@ -182,7 +225,7 @@ canvas {
     </ul>
   </div>
 </nav>
-<div class="wrapper1">
+<div class="wrapper1" id="page">
 <div id="particles-js"></div>
 <div class="jumbotron" style="background-color: white;height: 9vh;">
 	<div class="row">
